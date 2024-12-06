@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} About Us {% endblock %}
+{% block content %}
+<link rel="stylesheet" href="">
+<section class="py-5" id="about-us-section">
+    <div class="container">
+        <h1 class="text-center mb-4">About Us</h1>
+        <h2 class="mb-3">Welcome to Futuristic Academy</h2>
+        <p class="lead mb-4">
+            At Futuristic Academy, we are dedicated to shaping the next generation of tech-savvy professionals. Our institute offers specialized courses in Python, Digital Marketing, and Software Testing, designed to equip students with the skills and knowledge needed to thrive in today’s fast-paced digital landscape.
+        </p>
+
+        <h2 class="mt-5">Our Mission</h2>
+        <p>
+            Our mission is to empower individuals with cutting-edge skills and practical knowledge that will prepare them for successful careers in technology and digital marketing. We strive to create a dynamic learning environment that fosters innovation, critical thinking, and hands-on experience, ensuring our students are job-ready and competitive in the global market.
+        </p>
+
+        <h2 class="mt-5">Our Vision</h2>
+        <p>
+            We envision a future where education transcends traditional boundaries, providing accessible and quality training that aligns with industry demands. At Futuristic Academy, we aim to be a leader in tech education, inspiring our students to embrace lifelong learning and adapt to the ever-evolving technological landscape.
+        </p>
+
+        <h2 class="mt-5">Achievements</h2>
+        <ul class="mb-4">
+            <li class="list-group-item">Industry Partnerships: Collaborated with leading companies to provide our students with real-world experience and internship opportunities.</li>
+            <li class="list-group-item">Expert Instructors: Our courses are taught by industry professionals with extensive experience, ensuring students receive practical insights and guidance.</li>
+            <li class="list-group-item">High Employment Rate: A significant percentage of our graduates have successfully secured employment in their chosen fields within months of completion.</li>
+            <li class="list-group-item">Innovative Curriculum: Our curriculum is continually updated to reflect the latest trends and technologies, ensuring our students are always ahead of the curve.</li>
+        </ul>
+
+        <div class="text-center">
+            <a href="{% url 'home'%}" class="btn btn-primary">Join us at Futuristic Academy</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

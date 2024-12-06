@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact_us{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="">
+<section class="p-3" id="contact-section">
+   </script>
+    <div class="m-1 text-white bg-dark p-5 bg-opacity-50 rounded">
+        <h1>Contact Us</h1>
+        <div class="fs-6 fw-light mb-2">
+            <h5><strong>Post your message below. We will get back to you ASAP</strong></h5>
+        </div>
+        <form name="contact_form" method="post" onsubmit="showalert()" action="https://api.web3forms.com/submit">
+            {%csrf_token%}
+            <input type="hidden" name="access_key" value="0f8084ac-42c7-4329-b898-67d7926109d4">
+            <div class="mb-5">
+                <label for="message">Message</label>
+                <textarea class="form-control" name="message" rows="5" placeholder="Write your message here..."></textarea>
+            </div>
+            <div class="mb-5 row">
+                <div class="col">
+                    <label for="name">Your Name:</label>
+                    <input type="text" required maxlength="50" class="form-control" name="name">
+                </div>
+                <div class="col">
+                    <label for="email_addr">Your Email:</label>
+                    <input type="email" required maxlength="50" class="form-control" name="email" placeholder="name@example.com">
+                </div>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-success">Post</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function showalert(){
+            alert("Sent successfully, We will get back to you ASAP");
+        }
+    </script>
+    
+</section>
+{% endblock %}

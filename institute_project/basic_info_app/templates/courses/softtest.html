@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Software Testing Mastery{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="">
+<section class="py-5"  id="main-container">
+    <div class="container">
+        <h2 class="text-center">Course Title</h2>
+        <p class="text-center"><strong>Software Testing Mastery: 3-Month Training Program</strong></p>
+
+        <h2>Course Overview</h2>
+        <p>In the ever-evolving tech landscape, the demand for skilled software testers is growing. This comprehensive 3-month training program equips you with the essential skills and knowledge needed to excel in software testing. From manual testing techniques to automated testing tools, you will gain hands-on experience and practical insights to prepare you for a successful career in quality assurance.</p>
+
+        <h2>Key Learning Outcomes</h2>
+        <p><strong>By the end of this course, you will be able to:</strong></p>
+        <ul>
+            <li>Understand the software development lifecycle and testing methodologies.</li>
+            <li>Perform manual testing and create effective test cases.</li>
+            <li>Utilize automated testing tools for web and mobile applications.</li>
+            <li>Identify and report bugs efficiently.</li>
+            <li>Implement performance testing and security testing strategies.</li>
+            <li>Develop testing documentation and contribute to test management processes.</li>
+        </ul>
+
+        <h2>Course Curriculum</h2>
+        <h3>Month 1: Introduction to Software Testing</h3>
+        <h4>Week 1: Software Development Lifecycle (SDLC)</h4>
+        <ul>
+            <li>Overview of SDLC models (Waterfall, Agile, etc.)</li>
+            <li>Role of testing in SDLC</li>
+        </ul>
+
+        <h4>Week 2: Fundamentals of Software Testing</h4>
+        <ul>
+            <li>Types of testing: Manual vs. Automated</li>
+            <li>Testing levels: Unit, Integration, System, Acceptance</li>
+        </ul>
+
+        <h4>Week 3: Manual Testing Techniques</h4>
+        <ul>
+            <li>Writing effective test cases and test plans</li>
+            <li>Performing functional testing and exploratory testing</li>
+        </ul>
+
+        <h4>Week 4: Bug Reporting and Tracking</h4>
+        <ul>
+            <li>Tools for bug tracking (JIRA, Bugzilla)</li>
+            <li>Best practices for reporting bugs</li>
+        </ul>
+
+        <h3>Month 2: Automated Testing</h3>
+        <h4>Week 5: Introduction to Automated Testing</h4>
+        <ul>
+            <li>Benefits of automation and when to automate</li>
+            <li>Overview of automated testing tools (Selenium, TestNG)</li>
+        </ul>
+
+        <h4>Week 6: Selenium WebDriver Basics</h4>
+        <ul>
+            <li>Setting up Selenium and creating your first automated test</li>
+            <li>Locating elements and performing actions</li>
+        </ul>
+
+        <h4>Week 7: Advanced Selenium Techniques</h4>
+        <ul>
+            <li>Implementing page object model (POM)</li>
+            <li>Data-driven testing with Selenium</li>
+        </ul>
+
+        <h4>Week 8: Introduction to API Testing</h4>
+        <ul>
+            <li>Understanding REST and SOAP APIs</li>
+            <li>Tools for API testing (Postman, RestAssured)</li>
+        </ul>
+
+        <h3>Month 3: Practical Applications and Capstone Project</h3>
+        <h4>Week 9: Performance Testing</h4>
+        <ul>
+            <li>Introduction to performance testing concepts</li>
+            <li>Using tools like JMeter for performance testing</li>
+        </ul>
+
+        <h4>Week 10: Security Testing</h4>
+        <ul>
+            <li>Basics of security testing and common vulnerabilities</li>
+            <li>Tools and techniques for security assessment</li>
+        </ul>
+
+        <h4>Week 11: Test Management and Documentation</h4>
+        <ul>
+            <li>Creating and maintaining testing documentation</li>
+            <li>Best practices for test management</li>
+        </ul>
+
+        <h4>Week 12: Capstone Project and Review</h4>
+        <ul>
+            <li>Complete a hands-on project involving both manual and automated testing</li>
+            <li>Present your project and receive feedback from instructors</li>
+        </ul>
+
+        <h2>Who Should Enroll?</h2>
+        <ul>
+            <li>Aspiring software testers or QA professionals</li>
+            <li>Developers interested in understanding testing practices</li>
+            <li>Students or graduates seeking a career in software testing</li>
+        </ul>
+
+        <h2>Prerequisites</h2>
+        <ul>
+            <li>Basic understanding of software development concepts</li>
+            <li>Familiarity with programming is beneficial but not mandatory</li>
+        </ul>
+
+        <h2>Course Details</h2>
+        <ul>
+            <li>Duration: 3 months (2 sessions per week)</li>
+            <li>Format: Live online classes with practical exercises and projects</li>
+        </ul>
+
+        <h2>Enrollment Information</h2>
+        <ul>
+            <li>Tuition Fee: $X</li>
+            <li>Registration Link: <a href="{% url 'home' %}">Login</a></li>
+        </ul>
+
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li>Experienced instructors with industry expertise in software testing</li>
+            <li>Hands-on training with real-world projects</li>
+            <li>Access to a supportive community and networking opportunities</li>
+        </ul>
+
+        <h2>Contact Us</h2>
+        <p><strong>For more information, please reach out:</strong></p>
+        <ul>
+            <li>Email: [contact@example.com]</li>
+            <li>Phone: [Your Phone Number]</li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

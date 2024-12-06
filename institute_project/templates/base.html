@@ -41,7 +41,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <b><a class="nav-link" aria-current="page" href="">Home</a></b>
+                            <b><a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a></b>
                         </li>
                         <b>
                             <li class="nav-item dropdown">
@@ -49,17 +49,17 @@
                                     Courses
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="">Full Stack Python</a></li>
-                                    <li><a class="dropdown-item" href="">Software Testing</a></li>
-                                    <li><a class="dropdown-item" href="">Digital Marketing</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'python' %}">Full Stack Python</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'softtest' %}">Software Testing</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'digital' %}">Digital Marketing</a></li>
                                 </ul>
                             </li>
                         </b>
                         <li class="nav-item">
-                            <b><a class="nav-link" href="">About us</a></b>
+                            <b><a class="nav-link" href="{% url 'about_us' %}">About us</a></b>
                         </li>
                         <li class="nav-item">
-                            <b><a class="nav-link" href="">Contact us</a></b>
+                            <b><a class="nav-link" href="{% url 'contact_us' %}">Contact us</a></b>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
