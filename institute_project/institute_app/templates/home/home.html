@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css'%}">
+<section  class="p-3" id="service-section">
+    <div class="container">
+        <h1 class="text-center text-white">Services</h1>
+        <div class="row p-2">
+            <div class="col-md-6 p-3">
+                <div class="card text-center p-3" id="status-card">
+                    <div class="card-body" id="status-card-body">
+                        <h3 class="card-title"><a class="text-decoration-none text-white" href="">Addmission Status</a></h3>
+                        <p class="card-text text-white">Click here to see Addmission status</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 p-3">
+                <div class="card text-center p-3" id="admission-card">
+                    <div class="card-body"  id="admission-card-body">
+                        <h3 class="card-title"><a class="text-decoration-none text-white" href="">Online Addmission</a></h3>
+                        <p class="card-text text-white">Click here to take Addmission</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
