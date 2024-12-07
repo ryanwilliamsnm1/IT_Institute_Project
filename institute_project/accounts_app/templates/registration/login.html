@@ -1,0 +1,35 @@
+<!-- header part extended from base.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Futuristic Institute{% endblock %}
+
+{% block content %}
+
+<section class="p-4 bg-image"  id="sign-in-section">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <div class="container d-flex align-items-center justify-content-center" style="height: 100%;" id="sign-in-container">
+        <div class="col-md-6 bg-dark p-5 bg-opacity-50 rounded">
+            <form action="" method="POST" class="rounded text-white">
+                {% csrf_token %}
+                <h3 class="text-center">Sign In</h3>
+                <table class="table table-borderless text-white">
+                    <strong>{{ form.as_table }}</strong>
+                </table>
+                <input class="btn btn-primary w-100" type="submit" value="Login">
+                <div class="text-center mt-3">{{ msg }}</div>
+            </form>
+
+            <form action="{% url 'sign_up' %}">
+                <div class="text-center mt-3">
+                    <input type="submit" class="btn btn-success" value="Create New Account">
+                </div>         
+            </form>
+
+            <div class="text-center mt-3">
+                <a href="{% url 'reset' %}" class="link-primary fw-bold text-decoration-none">Forgot Password?</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

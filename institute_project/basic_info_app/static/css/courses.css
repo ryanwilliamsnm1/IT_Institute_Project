@@ -1,0 +1,8 @@
+#main-container{
+    background-color: #cafbff; 
+                            background-image: url('/static/common.jpg'); 
+                            background-size: cover; 
+                            background-position: center; 
+                            background-attachment: fixed;
+                            color: white;
+}

@@ -1,0 +1,8 @@
+#about-us-section{
+    background-color: #cafbff; 
+    background-image: url('/static/aboutus.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
+    color: white;
+}

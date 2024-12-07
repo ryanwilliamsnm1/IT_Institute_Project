@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Python-Django{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/courses.css' %}">
+<section class="py-5" id="main-container">
+    <div class="container">
+        <h2 class="text-center">Course Title</h2>
+        <p class="text-center"><b>Full Stack Python-Django with React JS Training Program</b></p>
+        
+        <h2>Course Introduction</h2>
+        <p>Unlock the power of full stack development with our intensive training program that combines the best of Python, Django, and React JS. Whether you're aiming to build dynamic web applications or enhance your existing skills, this course is designed to guide you through the entire development process over a comprehensive 6-month period.</p>
+        
+        <h2>What You'll Learn</h2>
+        <ul>
+            <li>Backend Development: Master Python and Django for robust server-side programming.</li>
+            <li>Frontend Development: Create engaging user interfaces with React JS.</li>
+            <li>API Development: Build and consume RESTful APIs to connect front and back ends.</li>
+            <li>Database Management: Utilize PostgreSQL or SQLite for efficient data storage.</li>
+            <li>Deployment: Deploy your applications using cloud services like Heroku or AWS.</li>
+        </ul>
+
+        <h2>Course Breakdown</h2>
+        <h3>Month 1: Python Fundamentals</h3>
+        <ul>
+            <li>Introduction to Python: Syntax, Data Structures, Functions</li>
+            <li>Object-Oriented Programming in Python</li>
+        </ul>
+
+        <h3>Month 2: Django Basics</h3>
+        <ul>
+            <li>Setting up a Django project: Models, Views, and Templates</li>
+            <li>Understanding Django's URL routing and Admin interface</li>
+        </ul>
+
+        <h3>Month 3: Advanced Django and APIs</h3>
+        <ul>
+            <li>Creating RESTful APIs with Django REST Framework</li>
+            <li>Authentication and Permissions</li>
+        </ul>
+
+        <h3>Month 4: Introduction to React JS</h3>
+        <ul>
+            <li>Building your first React app: Components, State, and Props</li>
+            <li>Understanding JSX and React lifecycle methods</li>
+        </ul>
+
+        <h3>Month 5: Advanced React</h3>
+        <ul>
+            <li>State management with Redux</li>
+            <li>Handling Forms and API calls in React</li>
+        </ul>
+
+        <h3>Month 6: Full Stack Integration and Deployment</h3>
+        <ul>
+            <li>Connecting Django APIs with React front end</li>
+            <li>Managing CORS and authentication flows</li>
+            <li>Deploying your application: Best practices</li>
+            <li>Capstone project presentation and feedback session</li>
+        </ul>
+
+        <h2>Who Should Enroll?</h2>
+        <ul>
+            <li>Aspiring developers with basic programming knowledge</li>
+            <li>Web developers looking to expand into full stack development</li>
+            <li>Anyone interested in modern web technologies</li>
+        </ul>
+
+        <h2>Prerequisites</h2>
+        <ul>
+            <li>Basic knowledge of programming concepts</li>
+            <li>Familiarity with HTML, CSS, and JavaScript is beneficial</li>
+        </ul>
+
+        <h2>Course Details</h2>
+        <ul>
+            <li>Duration: 6 months (2 sessions per week)</li>
+            <li>Format: Live online classes with interactive exercises</li>
+        </ul>
+
+        <h2>Enrollment Information</h2>
+        <ul>
+            <li>Tuition Fee: $X</li>
+            <li>Registration Link: <a href="{% url 'home' %}">Login</a></li>
+        </ul>
+
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li>Experienced instructors with industry backgrounds</li>
+            <li>Hands-on projects to build a strong portfolio</li>
+            <li>Access to a supportive community of learners</li>
+        </ul>
+
+        <h2>Get in Touch</h2>
+        <p><b>For more information, feel free to contact us:</b></p>
+        <ul>
+            <li>Email: [contact@example.com]</li>
+            <li>Phone: [Your Phone Number]</li>
+        </ul>
+    </div>
+</section>
+{% endblock %}
