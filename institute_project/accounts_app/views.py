@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from .forms import Alter_Signin_Form
+from django.contrib.auth.forms import AuthenticationForm
 # Create your views here.
 def login_view(request):
     if request.method == 'POST':
@@ -12,8 +13,11 @@ def login_view(request):
             login(request,objlogin)
             return redirect('home')
         else:
-            return render(request,'registration/login.html',{'msg': 'invalid login'})
-    return render(request,'registration/login.html')
+            form = AuthenticationForm()
+            return render(request,'registration/login.html',{'msg': 'invalid login', 'form': form})
+    else:
+        form = AuthenticationForm()
+        return render(request,'registration/login.html',{'form': form})
 
 #Logout Function
 def logout_view(request):

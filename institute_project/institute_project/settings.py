@@ -135,3 +135,6 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+MEDIA_URL= '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media/')

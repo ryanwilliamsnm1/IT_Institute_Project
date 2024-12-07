@@ -1,0 +1,19 @@
+#service-section{
+    background-image:url('/static/common.jpg'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh;
+}
+
+#status-card,
+#admission-card
+{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#status-card-body,
+#admission-card-body
+{
+    height: 183px;
+}

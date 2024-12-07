@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Admission{% endblock %}
+
+{% block content %}
+<section class="py-5" id="admission-section">
+    <link rel="stylesheet" href="{% static 'css/addmission.css' %}">
+    <h2 class="text-center mb-5">Add Student Admission</h2>
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <form action="{% url 'addstudent' %}" method="POST" enctype="multipart/form-data" class="border p-4 rounded shadow-lg"  id="admission-form">
+                {% csrf_token %}
+                
+                <div class="mb-4">
+                    <table class="table table-bordered table-striped table-hover">
+                        <tbody>
+                            <tr>
+                                <td colspan="2" class="bg-info text-white text-center p-2">
+                                    <strong>Student Information</strong>
+                                </td>
+                            </tr>
+                            {{ msginfo.as_table }}
+                            <tr>
+                                <td colspan="2" class="bg-info text-white text-center p-2">
+                                    <strong>Contact Information</strong>
+                                </td>
+                            </tr>
+                            {{ msgcontact.as_table }}
+                            <tr>
+                                <td colspan="2" class="bg-info text-white text-center p-2">
+                                    <strong>Course Selection</strong>
+                                </td>
+                            </tr>
+                            {{ msgcourse.as_table }}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="text-center mb-3">
+                    <input type="submit" value="Add Student" class="btn btn-success btn-lg px-5">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container mt-4">
+        {% if msgadd %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ msgadd }}
+            </div>
+        {% endif %}
+
+        {% if msgadd_error %}
+            <div class="alert alert-danger" role="alert">
+            <p>{{msgadd_error}}</p>
+            <p>{{errors}}</p>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+
+{% endblock %}
