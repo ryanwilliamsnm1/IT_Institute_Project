@@ -18,6 +18,10 @@ def addmission_view(request):
     return render(request,'addmission/addmission.html',{'msginfo':objinfo, "msgcontact":objcontact, "msgcourse":objcourse})
 
 @login_required
+def addmission_status_view(request):
+    return render(request,'addmission/addmission_status.html')
+
+@login_required
 def add_student(request):
     try:
         if request.method == 'POST':
@@ -52,10 +56,28 @@ def add_student(request):
                     }
                 })
         else:
-            # Handle the case where the method is not POST (e.g., GET request)
             return render(request, 'addmission/addmission.html')
     except Exception as e:
-        # Handle any unforeseen exceptions
         return render(request, 'addmission/addmission.html', {
             'msgadd_error': 'An unexpected error occurred: ' + str(e)
         })
+
+@login_required
+def student_status(request):
+    try:
+        student_id = request.POST.get('student_id')  
+        obj_std = Student_Info_Model.objects.get(id=student_id)
+        return render(request, 'addmission/addmission_status.html', {'msg': {obj_std}}) 
+    except Exception as e:
+        return render(request, 'addmission/addmission_status.html', {'errormsg': 'Student ID not found'})
+
+@login_required
+def student_display(request):
+    try:
+        student_dis = request.POST.get('student_dis')  
+        obj_info = Student_Info_Model.objects.get(id=student_dis)
+        obj_contact = Student_Contact_Model.objects.get(id=student_dis)
+        obj_course= Student_Course_Model.objects.get(id=student_dis)
+        return render(request, 'addmission/addmission_status.html', {'msg_info': {obj_info}, "msg_contact": {obj_contact}, "msg_course": {obj_course}})  
+    except Exception as e:
+        return render(request, 'addmission/addmission_status.html', {'msg_info_error': 'student not found'})

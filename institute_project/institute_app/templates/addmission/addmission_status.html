@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% block title %}Success{% endblock %}
+{% load static %}
+{% block content %}
+<section class="">
+    <link rel="stylesheet" href="{% static 'css/addmission_status.css' %}">
+    <!-- Background image for the entire page -->
+    <div class="container-fluid" id="main-container">
+        <!-- Content container with transparency -->
+        <div class="container p-5 rounded shadow-lg" id="transparent-container">
+            <h2 class="mb-4 text-center" id="check-status-title">Check Admission Status</h2>
+            <form action="{% url 'addmission_status' %}" method="POST" class="mb-4">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="student_id" class="form-label" id="student-id-label">Enter Student ID</label>
+                    <input type="text"  name="student_id" class="form-control" placeholder="Enter Student ID" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Check Status</button>
+            </form>
+            {% if msg %}
+
+                <div class="table-responsive mb-5">
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Id</th>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>Sur Name</th>
+                                <th>Gender</th>
+                                <th>DOB</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in msg %}
+                            <tr>
+                                <td>{{ i.id }}</td>
+                                <td>{{ i.first_name }}</td>
+                                <td>{{ i.middle_name }}</td>
+                                <td>{{ i.surname }}</td>
+                                <td>{{ i.gender }}</td>
+                                <td>{{ i.dob }}</td>
+                                <td><span class="badge bg-success">Success</span></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            {% endif %}
+
+            {% if errormsg %}
+              <div class="alert alert-danger" role="alert">
+                <p>{{errormsg}}</p>
+              </div>
+            {% endif %}
+
+            <!-- View Student Details Form -->
+            <h2 class="mb-4 text-center" id="view-details-title">View Student Details</h2>
+            <form action="{% url 'addmission_display' %}" method="POST" class="mb-4">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="student_dis" class="form-label" id="student-dis-label">Enter Student ID</label>
+                    <input type="text"  name="student_dis" class="form-control" placeholder="Enter Student ID" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">View</button>
+            </form>
+
+            <!-- Student Details Tables -->
+            {% if msg_info %}    
+                <div class="table-responsive">
+                    <h3 id="basic-info-title">Basic Information</h3>
+                    <table class="table table-bordered table-striped mb-4">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Id</th>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>Sur Name</th>
+                                <th>Gender</th>
+                                <th>DOB</th>
+                                <th>Images</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in msg_info %}
+                            <tr>
+                                <td>{{ i.id }}</td>
+                                <td>{{ i.first_name }}</td>
+                                <td>{{ i.middle_name }}</td>
+                                <td>{{ i.surname }}</td>
+                                <td>{{ i.gender }}</td>
+                                <td>{{ i.dob }}</td>
+                                <td><img src="{{ i.image.url }}" alt="Student Image" id="student-image"></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <h3 id="contact-info-title">Contact Information</h3>
+                    <table class="table table-bordered table-striped mb-4">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Email ID</th>
+                                <th>Address</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>Country</th>
+                                <th>Postal Code</th>
+                                <th>Mobile Number</th>
+                                <th>Aadhaar Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in msg_contact %}
+                            <tr>
+                                <td>{{ i.email_id }}</td>
+                                <td>Private</td>
+                                <td>Private</td>
+                                <td>Private</td>
+                                <td>Private</td>
+                                <td>Private</td>
+                                <td>Private</td>
+                                <td>Private</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <h3 id="course-info-title">Course Information</h3>
+                    <table class="table table-bordered table-striped">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Class Type</th>
+                                <th>Course</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in msg_course %}
+                            <tr>
+                                <td>{{ i.class_type }}</td>
+                                <td>{{ i.course }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+
+            {% if msg_info_error %}
+                <div class="alert alert-danger" role="alert">
+                    <p>{{msg_info_error}}</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

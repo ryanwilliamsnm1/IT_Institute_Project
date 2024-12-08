@@ -50,6 +50,8 @@ def resetpassword(request):
         try:
             user = User.objects.get(username=uname)
             if user is not None:
+                if user.check_password(newpass):
+                    return render(request, 'authentications/resetpassword.html', {'msg_error': 'Password can\'t be the same as the old one.'})
                 user.set_password(newpass)
                 user.save()
                 return render(request, 'authentications/resetpassword.html', {'msg': 'Password reset successfully'})

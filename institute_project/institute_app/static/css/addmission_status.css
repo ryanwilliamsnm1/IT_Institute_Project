@@ -1,0 +1,31 @@
+#main-container {
+    background-image: url('/static/common.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+#transparent-container{
+    background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+#check-status-title,
+#student-id-label,
+#view-details-title,
+#student-dis-label,
+#basic-info-title,
+#contact-info-title,
+#course-info-title,
+#errormsg
+{
+    color: white;
+}
+
+
+#student-image{
+    max-width: 100px;
+}
+
+
